@@ -22,3 +22,11 @@ for directory in [
     MODELS_DIR,
 ]:
     directory.mkdir(parents=True, exist_ok=True)
+
+FEATURE_GROUP_NAME = "time_series_hourly_feature_group"
+
+FEATURE_GROUP_VERSION = 1
+
+HOPSWORK_PROJECT_NAME = "MLOPS_End_To_End_Project"
+
+HOPSWORK_API_KEY = "Vxuemktxr8Y2bSKW.QKTEM9sowmt0sCp2UUUX67xbl3rBGqDklkV7m19JjImPCQhkK5syM3mwYOND10RJ"
