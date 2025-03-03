@@ -43,7 +43,7 @@ logger.info(
 # Step 5: Connect to the Hopsworks project
 logger.info("Connecting to Hopsworks project...")
 project = hopsworks.login(
-    project=config.HOPSWORKS_PROJECT_NAME, api_key_value=config.HOPSWORKS_API_KEY
+    project=config.HOPSWORK_PROJECT_NAME, api_key_value=config.HOPSWORK_API_KEY
 )
 logger.info("Connected to Hopsworks project.")
 
