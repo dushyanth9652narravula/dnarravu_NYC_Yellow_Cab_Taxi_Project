@@ -247,6 +247,7 @@ with st.spinner(text="Download shape file for taxi zones"):
 
 with st.spinner(text="Fetching batch of inference data"):
     features = load_batch_of_features_from_store(current_date)
+    features, targets = features
     st.sidebar.write("Inference features fetched from the store")
     progress_bar.progress(2 / N_STEPS)
 
