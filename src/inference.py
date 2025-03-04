@@ -97,7 +97,7 @@ def fetch_next_hour_predictions():
 
     fs = get_feature_store()
     fg = fs.get_feature_group(name=config.FEATURE_GROUP_MODEL_PREDICTION, version=1)
-    df = fg.read()
+    df = fg.read(read_options={"arrow_flight_config": {"timeout": 600}})
     # Then filter for next hour in the DataFrame
     df = df[df["pickup_hour"] == next_hour]
 
@@ -113,7 +113,7 @@ def fetch_predictions(hours):
     fs = get_feature_store()
     fg = fs.get_feature_group(name=config.FEATURE_GROUP_MODEL_PREDICTION, version=1)
 
-    df = fg.filter((fg.pickup_hour >= current_hour)).read()
+    df = fg.filter((fg.pickup_hour >= current_hour)).read(read_options={"arrow_flight_config": {"timeout": 600}})
 
     return df
 
@@ -127,7 +127,7 @@ def fetch_hourly_rides(hours):
     query = fg.select_all()
     query = query.filter(fg.pickup_hour >= current_hour)
 
-    return query.read()
+    return query.read(read_options={"arrow_flight_config": {"timeout": 600}})
 
 
 def fetch_days_data(days):
