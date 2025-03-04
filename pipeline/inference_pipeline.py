@@ -32,9 +32,9 @@ ts_data = ts_data[ts_data.pickup_hour.between(fetch_data_from, fetch_data_to)]
 ts_data.sort_values(["pickup_location_id", "pickup_hour"]).reset_index(drop=True)
 ts_data["pickup_hour"] = ts_data["pickup_hour"].dt.tz_localize(None)
 
-from src.data_utils import transform_ts_data_info_features
+from src.data_utils import transform_ts_data_info_features_and_target
 
-features = transform_ts_data_info_features(ts_data, window_size=24 * 28, step_size=23)
+features = transform_ts_data_info_features_and_target(ts_data, window_size=24 * 28, step_size=23)
 
 model = load_model_from_registry()
 
