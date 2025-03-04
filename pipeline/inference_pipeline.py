@@ -26,6 +26,7 @@ feature_view = feature_store.get_feature_view(
 ts_data = feature_view.get_batch_data(
     start_time=(fetch_data_from - timedelta(days=1)),
     end_time=(fetch_data_to + timedelta(days=1)),
+    read_options = {"timeout":600},
 )
 ts_data = ts_data[ts_data.pickup_hour.between(fetch_data_from, fetch_data_to)]
 ts_data.sort_values(["pickup_location_id", "pickup_hour"]).reset_index(drop=True)
