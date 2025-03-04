@@ -26,4 +26,4 @@ jobs:
       - name: Train model on new data
         env:
           HOPSWORKS_API_KEY: ${{ secrets.HOPSWORK_API_KEY}}
-        run: python -m pipelines.model_training_pipeline
+        run: python -m pipeline.model_training_pipeline
