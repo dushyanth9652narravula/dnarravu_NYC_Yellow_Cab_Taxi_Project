@@ -30,3 +30,12 @@ FEATURE_GROUP_VERSION = 1
 HOPSWORK_PROJECT_NAME = "MLOPS_End_To_End_Project"
 
 HOPSWORK_API_KEY = "Vxuemktxr8Y2bSKW.QKTEM9sowmt0sCp2UUUX67xbl3rBGqDklkV7m19JjImPCQhkK5syM3mwYOND10RJ"
+
+FEATURE_VIEW_NAME = "time_series_hourly_feature_view"
+
+FEATURE_VIEW_VERSION = 1
+
+MODEL_NAME = "taxi_demand_predictor_next_hour"
+MODEL_VERSION = 1
+
+FEATURE_GROUP_MODEL_PREDICTION = "taxi_hourly_model_prediction"
